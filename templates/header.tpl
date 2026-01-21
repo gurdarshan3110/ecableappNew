@@ -41,7 +41,7 @@
      <link href="/css/dropdown.css" rel="stylesheet"/>
     {literal}
     <script src="js/all.js"></script>
-    <script type="text/javascript" src="../include/javascript/jquery-1.10.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script  type="text/javascript" src="../include/javascript/functions.js"></script>
     <script  type="text/javascript" src="../include/javascript/paging_ajax.js"></script>
     <script type="text/javascript" src="../include/ajax/xajax_js/xajax.js"></script>

