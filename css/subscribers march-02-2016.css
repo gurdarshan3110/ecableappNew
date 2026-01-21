@@ -1,0 +1,9 @@
+.table-data {
+    float: left;
+    margin-right: 6px;
+    width: 100px;
+}
+.modal-dialog {
+    margin: 30px auto;
+    width: 800px !important;
+}

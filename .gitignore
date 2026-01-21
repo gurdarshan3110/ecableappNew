@@ -1,0 +1,7 @@
+uploads/
+templates_c/
+images/
+*.tar.gz
+*.sql
+error_log
+webservice/error_log

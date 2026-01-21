@@ -1,0 +1,53 @@
+#display > ul {
+    border: 1px solid #ccc;
+    float: left;
+    max-height: 271px;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 4px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#display li {
+    border-bottom: 1px solid #ccc;
+    float: left;
+    font-size: 13px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+}
+
+#display li:hover {
+    background:  #3399ff !important ;
+    color: #fff;
+}
+#display1 > ul {
+    border: 1px solid #ccc;
+    float: left;
+    max-height: 271px;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 4px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#display1 li {
+    border-bottom: 1px solid #ccc;
+    float: left;
+    font-size: 13px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+}
+
+#display1 li:hover {
+    background:  #3399ff !important ;
+    color: #fff;
+}
+#parsley-id-multiple-typo{
+    display:none !important;
+}
